@@ -8,7 +8,7 @@ This program was written to help Iota users who unexpectedly see a zero balance 
 The goal is that the program lets unexperienced users test what could possibly cause Trinity to not show the expected balance. I plan to add more tests over time.
 Currently the tool can test
 1. if funds on addresses of a seed were taken into custody by the Iota Foundation in late 2017. If this is the case the affected funds are reclaimable.
-2. if there is any balance that Trinity might not show. The program will list all addresses with balance and also allows exporting the generated addresses even if no balance is found. These addresses can be supplied to other more expereinced users to check if any funds had been on these addresses. 
+2. if there is any balance that Trinity might not show. The program will list all addresses with balance and also allows exporting the generated addresses even if no balance is found. While Trinity will often only show a single address if no funds are found. The exported addresses can be supplied to other more experienced users to check if any funds had been on these addresses. 
 3. if the seed contains typo (not implemented yet)
 4. if there ever have been funds on addresses of the seed and if so, where they went to (not implemeneted yet). This mode would require an online connection and might not be implemented at all for security reasons
 
