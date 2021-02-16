@@ -6,11 +6,11 @@ This program was written to help Iota users who unexpectedly see a zero balance 
 
 ## What does it do?
 The goal is that the program lets unexperienced users test what could possibly cause Trinity to not show the expected balance. I plan to add more tests over time.
-Currently the tool can test
-1. if funds on addresses of a seed were taken into custody by the Iota Foundation in late 2017. If this is the case the affected funds are reclaimable.
-2. if there is any balance that Trinity might not show. The program will list all addresses with balance and also allows exporting the generated addresses even if no balance is found. While Trinity will often only show a single address if no funds are found. The exported addresses can be supplied to other more experienced users to check if any funds had been on these addresses. 
-3. if the seed contains typo (not implemented yet)
-4. if there ever have been funds on addresses of the seed and if so, where they went to (not implemeneted yet). This mode would require an online connection and might not be implemented at all for security reasons
+The program allows to 
+1. check if funds on addresses of a seed were taken into custody by the Iota Foundation in late 2017. If this is the case the affected funds are reclaimable.
+2. check if there is any balance that Trinity might not show. The program will list all addresses with balance while Trinity will often only show a single address if no funds are found. 
+3. export a list of generated addresses to be tested with the online tool [iotaAddressHistoryChecker](https://github.com/HBMY289/iotaAddressHistoryChecker)
+4. check for typos in the seed (not implemented yet)
 
 Seeds that are too short or too long will be adadpted in the same way the Iota Light Wallet did.
 
@@ -25,6 +25,9 @@ If a reclaim case could be ruled out, the balance option will generate addresses
 curl -H 'X-IOTA-API-VERSION: 1' -d '{"command":"getLedgerState"}' localhost:14265 >  snapshot.txt
 ```
 Place the file `snapshot.txt` next to this tool's executable. It will be automatically be used when checking the balances.
+
+##### Export Addresses to check online
+This program requires to enter your seed and is designed to run without any internet connection. If all your addresses still do not show any balance you can check the addresses on the Iota tangle explorer [explorer.iota.org](https://explorer.iota.org) for any transactions that show where your funds went. To avoid having to enter all addresses manually I wrote another tool that automates this process ([iotaAddressHistoryChecker])(https://github.com/HBMY289/iotaAddressHistoryChecker). It will require a list of addresses exported by the iotaZeroBalanceHelper and then request all available tranascations from the explorer. It will report any token movements in a short and human readable report.
 
 ## Disclaimer
 NEVER share your seed with anyone. No community member or member of the Iota Foundation will ever ask for your seed. If someone does it is 100% a scam to steal your money. That said, even entering your seed into a software other than the official Iota wallet should not be handled lightly and can only be recommended as a last resort. For your own safety you should run this software only an an air-gapped computer. 
