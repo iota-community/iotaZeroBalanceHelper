@@ -1,4 +1,4 @@
-module github.com/HBMY289/iotaZeroBalanceHelper
+module github.com/iota-community/iotaZeroBalanceHelper
 
 go 1.15
 
