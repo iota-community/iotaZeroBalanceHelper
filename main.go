@@ -32,7 +32,7 @@ func welcome (){
 
 func mainMenu(seed string) {
 	for {
-		opt := userIO.GetOption("Choose from available options:", []string{"check balance", "check for possible reclaim", "Exit"})
+		opt := userIO.GetOption("Choose from available options:", []string{"check balance (Kerl)", "check balance (CurlP)", "check for possible reclaim", "Exit"})
 		switch opt {
 			case 1:
 				checkKerlBalance(seed)
