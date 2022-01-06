@@ -73,7 +73,7 @@ func checkCurlPBalance(seed string) {
 	balance.LoadSnapshot()
 	addrCount := userIO.GetNumberOfAddresses ()
 	fmt.Println("\nGenerating addresses")
-	addrs := address.GetCurlPddresses(seed,addrCount)
+	addrs := address.GetCurlPAddresses(seed,addrCount)
 	total, bals := balance.GetBalance(addrs)
 	if total == 0 {
 		fmt.Printf("\nNo funds were found on the first %d addresses. Either the funds have been moved or you entered the wrong seed.\n", addrCount)
