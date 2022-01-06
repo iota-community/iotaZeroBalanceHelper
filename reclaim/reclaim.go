@@ -3,7 +3,7 @@ package reclaim
 import (
 	"fmt"
 
-	. "github.com/HBMY289/iotaZeroBalanceHelper/address"
+	. "github.com/iota-community/iotaZeroBalanceHelper/address"
 )
 
 func Search(seed string, endIndex int) ReclaimAddresses {
