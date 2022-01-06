@@ -19,9 +19,12 @@ func GetKerlAddresses (seed string, addrCount int) []string{
 	return addrs
 }
 
-func GetCurlPAddress(seed string, index int) string {
-	algo := curl.NewCurlP27()
-	return getAddress(seed, uint64(index), algo)
+func GetCurlAddresses(seed string, addrCount int) []string {
+    addrs := make([]string, addrCount, addrCount)
+    for i := 0; i < addrCount; i++ {
+        addrs[i] = GetCurlPAddress(seed, i)
+    }
+    return addrs
 }
 
 func GetKerlAddress(seed string, index int) string {
